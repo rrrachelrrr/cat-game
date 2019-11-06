@@ -1,6 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 // // import cat from './public/football-cat.jpg'
+import Kitten from './components/Kitten.js'
 import './App.css';
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
           Cats are fun
         </a>
       </header>
+      <Kitten />
+      <Kitten />
+      <Kitten />
     </div>
   );
 }
