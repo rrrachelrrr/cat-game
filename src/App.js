@@ -14,16 +14,18 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://nypost.com/2019/11/05/black-cat-who-dashed-onto-field-during-giants-game-is-among-strays-living-at-metlife-stadium/"
           target="_blank"
           rel="noopener noreferrer"
         >
           Cats are fun
         </a>
       </header>
-      <Kitten />
-      <Kitten />
-      <Kitten />
+        <div className="kitten-div">
+          <Kitten />
+          <Kitten />
+          <Kitten />
+        </div>
     </div>
   );
 }
