@@ -13,7 +13,7 @@ class Kitten extends Component {
     render(){
       return (
       <div>"🐈"
-        <button value="submit" onClick={this.petKitten}>Pet me</button>
+        <button value="submit" className="kitten-petting-button" onClick={this.petKitten}>Pet me</button>
         <span className="kitten-pet-count"> This kitten has been pet <strong>{this.state.pets} times </strong></span>
       </div>
     )
