@@ -6,31 +6,65 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    allKittens: ['Lucy', 'Achilles', 'Chumley']
+    allKittens: ['Lucy', 'Achilles', 'Chumley'],
+    bestBoy: 'Lil Mama',
+    newCatName: '',
+    highScorePets: 0
   }
 
+  whoGotPet = (name, numPets) => {
+    if (numPets > this.state.highScorePets){
+      this.setState({
+        bestBoy: name,
+        highScorePets: numPets
+      })
+    }
+  }
+
+  handleChange = (e) => {
+    this.setState({[e.target.name]: e.target.value})
+    console.log(this.state)
+  }
+
+  addACat = (e) => {
+    e.preventDefault()
+    if (this.state.newCatName){
+    const extraKittens = this.state.allKittens.push(this.state.newCatName)
+    console.log(extraKittens)
+    this.setState({allKittens: extraKittens})}
+  }
+
+
   render(){
-  const kittenArray = this.state.allKittens.map(kitten => <Kitten name={kitten}/>)
+  const kittenArray = this.state.allKittens.map(kitten => <Kitten name={kitten} whoGotPet={this.whoGotPet}/>)
+
 
     return (
       <div className="App">
         <header className="App-header">
           <img src='./football-cat.jpg' className="App-logo" alt="logo" />
-          <p>
-            Hello! Pet some cats here soon
-          </p>
-          <a
-            className="App-link"
-            href="https://nypost.com/2019/11/05/black-cat-who-dashed-onto-field-during-giants-game-is-among-strays-living-at-metlife-stadium/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Cats are fun
-          </a>
+            <p>
+              Hello! Here is a safe space to love on some cats ❤️ 🐈
+            </p>
         </header>
+        <div className="main-div">
+        <p> "🐈" {this.state.bestBoy} is the most pet boy</p>
           <div className="kitten-div">
             {kittenArray}
           </div>
+          <form className="new-cat-form" onSubmit={this.addACat}>
+              <h4>Add a cat!!! ❤️ 🐈</h4>
+              new kitty:
+              <input
+                type="text"
+                name="newCatName"
+                value={this.state.newCatName}
+                placeholder="Mittens"
+                onChange={this.handleChange} />
+              <input type="submit" />
+          </form>
+
+        </div>
       </div>
     );
   }
