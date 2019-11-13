@@ -14,7 +14,7 @@ class Kitten extends Component {
       return (
       <div>"🐈"
         <button value="submit" className="kitten-petting-button" onClick={this.petKitten}>Pet me</button>
-        <span className="kitten-pet-count"> This kitten has been pet <strong>{this.state.pets} times </strong></span>
+        <span className="kitten-pet-count"> {this.props.name} has been pet <strong>{this.state.pets} times </strong></span>
       </div>
     )
   }
