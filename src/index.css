@@ -13,7 +13,10 @@ code {
 }
 
 .kitten-div {
-  background-color: grey
+  display: flex;
+  background-color: grey;
+  justify-content: center;
+  align-items: center;
 }
 
 .kitten-pet-count {
