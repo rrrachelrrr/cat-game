@@ -6,7 +6,8 @@ class Kitten extends Component {
   }
 
   petKitten = () => {
-    this.setState({pets: this.state.pets += 1})
+    const howManyPets = this.state.pets++
+    this.setState({pets: howManyPets})
     this.props.whoGotPet(this.props.name, this.state.pets)
   }
 

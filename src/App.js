@@ -29,7 +29,8 @@ class App extends React.Component {
   addACat = (e) => {
     e.preventDefault()
     if (this.state.newCatName){
-    const extraKittens = this.state.allKittens.push(this.state.newCatName)
+    const extraKittens = this.state.allKittens
+    extraKittens.push(this.state.newCatName)
     console.log(extraKittens)
     this.setState({allKittens: extraKittens})}
   }
