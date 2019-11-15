@@ -21,6 +21,10 @@ class App extends React.Component {
     }
   }
 
+  clearPets = () => {
+    this.setState({highScorePets: 0, bestBoy: "Lil Mama"})
+  }
+
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
     console.log(this.state)
@@ -37,8 +41,11 @@ class App extends React.Component {
 
 
   render(){
-  const kittenArray = this.state.allKittens.map(kitten => <Kitten name={kitten} whoGotPet={this.whoGotPet}/>)
+  const kittenArray = this.state.allKittens.map(kitten => <Kitten name={kitten} whoGotPet={this.whoGotPet} clearPets={this.clearPets}/>)
 
+//add mechanism where you pet a cat too many times and it bites you; essentially don't wake the wiggler
+
+//How to do?? As pets increase include random number generator. compare each pet count to num generator??
 
     return (
       <div className="App">
@@ -50,6 +57,7 @@ class App extends React.Component {
         </header>
         <div className="main-div">
         <p> "🐈" {this.state.bestBoy} is the most pet boy</p>
+
           <div className="kitten-div">
             {kittenArray}
           </div>

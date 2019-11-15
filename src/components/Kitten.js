@@ -9,6 +9,11 @@ class Kitten extends Component {
     const howManyPets = this.state.pets+=1
     this.setState({pets: howManyPets})
     this.props.whoGotPet(this.props.name, this.state.pets)
+    if (this.state.pets > 5){
+      alert("STOP PETTING ME!!!! 💀 I BITE YOU!!!")
+      this.setState({pets: 0})
+      this.props.clearPets()
+    }
   }
 
     render(){
