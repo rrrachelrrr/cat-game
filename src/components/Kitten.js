@@ -9,12 +9,18 @@ class Kitten extends Component {
     const howManyPets = this.state.pets+=1
     this.setState({pets: howManyPets})
     this.props.whoGotPet(this.props.name, this.state.pets)
-    if (this.state.pets > 5){
+    if (this.state.pets > Math.random()*(10-5) + 5){
       alert("STOP PETTING ME!!!! 💀 I BITE YOU!!!")
       this.setState({pets: 0})
       this.props.clearPets()
     }
   }
+
+//   function getRandomArbitrary(min, max) {
+//    return Math.random() * (max - min) + min;
+// }
+
+// Math.floor(Math.random() * 100) + 1
 
     render(){
       return (
