@@ -56,7 +56,7 @@ class App extends React.Component {
             </p>
         </header>
         <div className="main-div">
-        <p> "🐈" {this.state.bestBoy} is the most pet boy</p>
+        <p> "🐈" {this.state.bestBoy} loves you the most</p>
 
           <div className="kitten-div">
             {kittenArray}
