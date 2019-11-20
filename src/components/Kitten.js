@@ -10,7 +10,7 @@ class Kitten extends Component {
     this.setState({pets: howManyPets})
     this.props.whoGotPet(this.props.name, this.state.pets)
     if (this.state.pets > Math.random()*(10-5) + 5){
-      alert("STOP PETTING ME!!!! 💀 I BITE YOU!!!")
+      alert(`${this.props.name.toUpperCase()} DOESN'T WANT TO BE PET!!! 💀 I BITE YOU!!!"`)
       this.setState({pets: 0})
       this.props.clearPets()
     }
